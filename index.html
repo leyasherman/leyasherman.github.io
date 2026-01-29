@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leya Sherman | Business Analytics & Finance Professional</title>
     <style>
-    	html {
+    	html, body {
+		height: 100%;
         	scroll-behavior: smooth;
+		scroll-snap-type: y mandatory;
     	}
+	section {
+	    scroll-snap-align: start;
+	    scroll-margin-top: 72px;
+	}
+	html {
+	    scroll-padding-top: 72px;
+	}
+	html {
+	    scroll-snap-stop: always;
+	}
         * {
             margin: 0;
             padding: 0;
@@ -476,7 +488,7 @@
             <div class="hero-text">
                 <h1>Leya Sherman</h1>
                 <h2>Business Analytics & Finance Professional</h2>
-                <p>MSc Business Analytics student at UCL with experience in financial planning, data analytics, and strategic consulting. Passionate about leveraging data-driven insights to solve complex business problems.</p>
+                <p>MSc Business Analytics student at UCL with experience in financial planning and data analytics. Passionate about leveraging data-driven insights to solve complex business problems.</p>
                 <div class="contact-info">
                     <div class="contact-item">
                         <span>📍</span> London, UK
