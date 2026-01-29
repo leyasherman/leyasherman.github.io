@@ -8,22 +8,20 @@
     	html, body {
 		height: 100%;
         	scroll-behavior: smooth;
-		scroll-snap-type: y mandatory;
+		scroll-snap-type: y proximity;
     	}
 	section {
-	    scroll-snap-align: start;
-	    scroll-margin-top: 72px;
+		scroll-snap-align: center;
+		scroll-margin-top: 72px;
 	}
 	html {
-	    scroll-padding-top: 72px;
+		scroll-padding-top: 72px;
 	}
-	html {
-	    scroll-snap-stop: always;
-	}
+
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
         }
 
         :root {
