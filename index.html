@@ -729,7 +729,16 @@
                         <span>💼</span> <a href="https://linkedin.com/in/leya-sherman" target="_blank" style="color: var(--primary-color);">LinkedIn</a>
                     </div>
                     <div class="contact-item">
-                        <span>📱</span> <span style="color: var(--dark-grey);">+44 7412 912811</span>
+                        <span>📱</span>
+				<a href="tel:+447412912811" class="phone">
+					 +44 7412 912811
+				</a>
+			.phone {
+				color: var(--medium-grey);
+			}
+			a[href^="tel"] {
+				color: var(--medium-grey);
+			}
                     </div>
                 </div>
             </div>
