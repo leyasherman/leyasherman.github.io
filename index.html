@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leya Sherman | Business Analytics & Finance Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #5DADE2;
+            --secondary-color: #7FB3D5;
+            --accent-color: #48C9B0;
+            --dark-grey: #2C3E50;
+            --medium-grey: #566573;
+            --light-grey: #D5DBDB;
+            --background: #F8F9F9;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-grey);
+            background-color: var(--background);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--medium-grey);
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Mobile menu button */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--white);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--dark-grey);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        /* Experience & Education Cards */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: var(--white);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .timeline-item h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .company {
+            color: var(--medium-grey);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .date {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .timeline-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-item li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: var(--medium-grey);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background: var(--light-grey);
+            color: var(--dark-grey);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* Skills */
+        .skills-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-category {
+            margin-bottom: 2rem;
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .skill-item:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-grey);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                padding: 1rem;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Leya Sherman</div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul id="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <img src="photo_2026-01-29_11-00-26.jpg" alt="Leya Sherman" class="hero-image">
+            <div class="hero-text">
+                <h1>Leya Sherman</h1>
+                <h2>Business Analytics & Finance Professional</h2>
+                <p>MSc Business Analytics student at UCL with experience in financial planning, data analytics, and strategic consulting. Passionate about leveraging data-driven insights to solve complex business problems.</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📍</span> London, UK
+                    </div>
+                    <div class="contact-item">
+                        <span>📧</span> <a href="mailto:namresh.leya2003@gmail.com">Email</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>💼</span> <a href="https://linkedin.com/in/leya-sherman" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Financial Planning and Analysis Specialist</h3>
+                    <div class="company">ALFA-BANK, Moscow, Russia</div>
+                    <div class="date">September 2023 - September 2025</div>
+                    <ul>
+                        <li>Generated +5% profitability growth (~$2.5bn impact) through financial planning and profitability analysis of commission and liability products</li>
+                        <li>Reduced reporting turnaround time by 15% by automating financial reporting and forecasting models using SQL, Python, and advanced Excel</li>
+                        <li>Improved data accuracy and management decision speed through automation</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Business Development Manager</h3>
+                    <div class="company">ISRAEL HABITAT, Herzliya, Israel</div>
+                    <div class="date">July 2022 - April 2023</div>
+                    <ul>
+                        <li>Analyzed real estate market and identified new business opportunities, increasing revenue by 20%</li>
+                        <li>Strengthened stakeholder management and cross-border client relationships</li>
+                        <li>Drove a 30% improvement in customer retention through strategic relationship building</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Intern, Department of Advanced Analytics Efficiency</h3>
+                    <div class="company">ALFA-BANK, Moscow, Russia</div>
+                    <div class="date">August 2021 - September 2021</div>
+                    <ul>
+                        <li>Applied analytical skills to optimize operational efficiency and identified opportunities for revenue growth</li>
+                        <li>Performed strategic market and competitor analysis across data science and adjacent fields</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>MSc Business Analytics</h3>
+                    <div class="company">University College London (UCL), London, UK</div>
+                    <div class="date">September 2025 - September 2026</div>
+                    <ul>
+                        <li>Focus: Financial Analysis, Predictive Analytics, Data Engineering, Natural Language Programming</li>
+                        <li>Programming for Business Analytics (79%), Marketing Analytics (77%)</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>BSc Economics and Finance</h3>
+                    <div class="company">London School of Economics (LSE), London, UK</div>
+                    <div class="date">September 2021 - August 2024</div>
+                    <ul>
+                        <li>GPA: 4.0 / 4.0 (1st Class Honours)</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>International College of Economics, BSc Economics and Finances</h3>
+                    <div class="company">National Research University Higher School of Economics, Moscow, Russia</div>
+                    <div class="date">September 2020 - July 2024</div>
+                    <ul>
+                        <li>Conducted applied research that was implemented within the bank</li>
+                        <li>Designed a model to analyse firms' cash management and currency risks in deposit portfolios</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>BSc Business Administration and Economics</h3>
+                    <div class="company">Reichman University, Herzliya, Israel</div>
+                    <div class="date">October 2022 - September 2023</div>
+                    <ul>
+                        <li>GPA: 3.5 / 4.0</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Projects & Research</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Transport for London: Reducing Passenger Congestion</h3>
+                        <p>Developed a strategic solution to reduce congestion at Wembley Stadium by implementing shuttle bus services. Used regression modeling and data analysis to predict a 20% reduction in passenger waiting times.</p>
+                        <div class="project-tags">
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Strategy</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Regression</span>
+                        </div>
+                        <a href="Shuttles_for_Wembley_Stadium_final.pdf" class="project-link" target="_blank">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Marketing Analytics: Customer Segmentation & CLV</h3>
+                        <p>Conducted comprehensive marketing analysis including RFM segmentation, K-means clustering, and customer lifetime value modeling. Achieved 67.8% ROI improvement through targeted marketing strategies.</p>
+                        <div class="project-tags">
+                            <span class="tag">Marketing Analytics</span>
+                            <span class="tag">R</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">CLV</span>
+                        </div>
+                        <a href="MSIN0094-assignment1-RWFD2.pdf" class="project-link" target="_blank">View Assignment 1 →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Decision Tree & Random Forest Analysis</h3>
+                        <p>Built and compared supervised learning models for customer targeting. Implemented decision trees and random forests, achieving significant improvements in predictive accuracy for customer response rates.</p>
+                        <div class="project-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">R</span>
+                            <span class="tag">Predictive Analytics</span>
+                        </div>
+                        <a href="MSIN0094-assignment2-RWFD2.pdf" class="project-link" target="_blank">View Assignment 2 →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Causal Inference & A/B Testing</h3>
+                        <p>Designed and analyzed A/B/N experiments for e-commerce. Applied instrumental variables and regression discontinuity design to identify causal effects of pricing and product ratings on sales.</p>
+                        <div class="project-tags">
+                            <span class="tag">Causal Inference</span>
+                            <span class="tag">A/B Testing</span>
+                            <span class="tag">Statistics</span>
+                            <span class="tag">R</span>
+                        </div>
+                        <a href="MSIN0094-assignment3-RWFD2.pdf" class="project-link" target="_blank">View Assignment 3 →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Firms' Cash Management and Currency Risks</h3>
+                        <p>Bachelor's thesis analyzing the impact of economic and political factors on yuan deposit yields. Used time series analysis, regression modeling, and stationarity testing to provide strategic recommendations.</p>
+                        <div class="project-tags">
+                            <span class="tag">Finance</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Time Series</span>
+                            <span class="tag">Risk Management</span>
+                        </div>
+                        <a href="Diploma_Sherman_Leya.pdf" class="project-link" target="_blank">View Thesis →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Data & Analytics</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">SQL</span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">R</span>
+                        <span class="skill-item">VBA</span>
+                        <span class="skill-item">Statistical Analysis</span>
+                        <span class="skill-item">Power Query</span>
+                        <span class="skill-item">Excel (Advanced)</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Analytics & Modeling</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">Predictive Analytics</span>
+                        <span class="skill-item">Financial Modeling</span>
+                        <span class="skill-item">Machine Learning</span>
+                        <span class="skill-item">Data Engineering</span>
+                        <span class="skill-item">Time Series Analysis</span>
+                        <span class="skill-item">Regression Analysis</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Business & Project Management</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">Oracle (Advanced)</span>
+                        <span class="skill-item">JIRA (Advanced)</span>
+                        <span class="skill-item">Strategic Planning</span>
+                        <span class="skill-item">Stakeholder Management</span>
+                        <span class="skill-item">Business Development</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">English (Fluent)</span>
+                        <span class="skill-item">Russian (Native)</span>
+                        <span class="skill-item">Hebrew (Fluent)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <p style="font-size: 1.1rem; color: var(--medium-grey); margin-bottom: 2rem;">
+                    I'm currently based in London and open to opportunities in business analytics, data science, and finance. 
+                    Feel free to reach out if you'd like to connect!
+                </p>
+                <div class="contact-info" style="justify-content: center; font-size: 1.1rem;">
+                    <div class="contact-item">
+                        <span>📧</span> <a href="mailto:namresh.leya2003@gmail.com" style="color: var(--primary-color);">namresh.leya2003@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>💼</span> <a href="https://linkedin.com/in/leya-sherman" target="_blank" style="color: var(--primary-color);">LinkedIn</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span> <span style="color: var(--medium-grey);">+44 7412 912811</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Leya Sherman. Built with passion for data and analytics.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">
+            <a href="#about">Back to Top ↑</a>
+        </p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('nav-menu').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
